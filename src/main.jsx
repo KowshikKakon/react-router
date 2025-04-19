@@ -27,11 +27,11 @@ const router = createBrowserRouter([
       { index: true, Component: Home },
       { path: "mobiles", Component: Mobiles },
       { path: "laptops", Component: Laptop },
-      {
-        path: "users",
-        loader:()=>fetch("https://jsonplaceholder.typicode.com/users"),
-        Component: Users
-      },
+      // {
+      //   path: "users",
+      //   loader:()=>fetch("https://jsonplaceholder.typicode.com/users"),
+      //   Component: Users
+      // },
      
       {
         path: "users2",
@@ -48,28 +48,33 @@ const router = createBrowserRouter([
         Component:User4
 
       },
-      {
-        path: 'posts',
+      // {
+      //   path: 'posts',
        
-        loader:()=>fetch(`https://jsonplaceholder.typicode.com/posts`),
-        Component:Posts
+      //   loader:()=>fetch(`https://jsonplaceholder.typicode.com/posts`),
+      //   Component:Posts
         
-      },
-      {
-        path: 'posts/:postId',
+      // },
+      // {
+      //   path: 'posts/:postId',
        
-        loader:({params})=>fetch(`https://jsonplaceholder.typicode.com/posts/${params.postId}`),
-        Component:PostDetail
+      //   loader:({params})=>fetch(`https://jsonplaceholder.typicode.com/posts/${params.postId}`),
+      //   Component:PostDetail
         
-      },
+      // },
+      // {
+      //   path: 'users/:userId',
+      //   loader: ({ params }) => {
+      //     console.log("params inside:",params.userId);
+      //     fetch(`https://jsonplaceholder.typicode.com/users`)
+      //   },
+      //   Component:Userdetails
+        
+      // }
       {
-        path: 'users/:userId',
-        loader: ({ params }) => {
-          console.log("params inside:",params.userId);
-          fetch(`https://jsonplaceholder.typicode.com/users`)
-        },
-        Component:Userdetails
-        
+        path: "*",
+        element: <h1>Overall not found...</h1>
+
       }
     ]
   },
